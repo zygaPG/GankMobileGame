@@ -8,7 +8,7 @@ public class AtackSystem2 : NetworkBehaviour
     public GameObject minePtef;
 
     public PlayerObiect player;
-
+    public Transform WarponSpanPosition;
 
 
     void Start()
@@ -86,6 +86,27 @@ public class AtackSystem2 : NetworkBehaviour
         GameObject mine = Instantiate(minePtef, position, this.transform.rotation);
         NetworkServer.Spawn(mine);
         mine.GetComponent<Chuck>().Father = father;
-    }   
+    }
+
+
+    //----------------------------------------------------------
+
+    //-------------------------Atack-Two------------------------
+
+    [Command]
+    public void CmdAtackTwo()
+    {
+        RaycastHit ray;
+        if (Physics.Raycast(WarponSpanPosition.position, transform.forward, out ray, 2))
+        {
+            if (ray.collider.gameObject.tag == "Player")
+            {
+                ray.collider.GetComponent<PlayerObiect>().RpcDostałem(0, 5);
+
+            }
+        }
+    }
+
+
 }
 

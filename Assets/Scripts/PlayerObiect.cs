@@ -29,6 +29,21 @@ public class PlayerObiect : NetworkBehaviour
             cameraaa = GameObject.Find("Main Camera");
             cameraaa.GetComponent<CameraSmoothMove>().target = this.gameObject.transform;
             cameraaa.GetComponent<CameraSmoothMove>().enabled = true;
+            cameraaa.GetComponent<MoveControl>().playerObiect = this;
+            cameraaa.GetComponent<MoveControl>().enabled = true;
+            //cameraaa.GetComponent<MineButton>().RangeRing = cameraaa.MineButton.Find("RangeRing");
+
+            foreach (Transform eachChild in transform)
+            {
+                if (eachChild.name == "RangeRing")
+                {
+                    cameraaa.GetComponent<MineButton>().RangeRing = eachChild.gameObject;
+                    cameraaa.GetComponent<MineButton>().Ring = eachChild.GetChild(0).gameObject;
+                }
+                
+            }
+
+
             ataksystem = GetComponent<AtackSystem1>();
             ataksystem2 = GetComponent<AtackSystem2>();
 
@@ -36,7 +51,7 @@ public class PlayerObiect : NetworkBehaviour
         stun = false;
         canRotate = true;
     }
-
+    
 
     void Update()
     {
