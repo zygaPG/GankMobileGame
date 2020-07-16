@@ -231,7 +231,6 @@ MonoBehaviour:
   Range: 4
   back: 0
   atackSystem: {fileID: 0}
-  velocity: {x: 0, y: 0, z: 0}
 --- !u!54 &-1479889374069149205
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,18 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MineButton : MonoBehaviour
 {
     public bool touched;
     public GameObject insideRing;
     int touchId;
+    int originTouchId;
 
     float przliczenie;
 
     public GameObject Ring;
     public GameObject RangeRing;
 
+    public Image rangeImage;
+
+
+
+    public GameObject player;
+
+
+    int lenghtTouchBoard;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,14 +34,27 @@ public class MineButton : MonoBehaviour
     {
         if(touchId != 99)
         {
-            float distance = Vector2.Distance(transform.position, Input.GetTouch(touchId).position);
+            if (lenghtTouchBoard != Input.touchCount)
+            {
+                if (lenghtTouchBoard > Input.touchCount)
+                {
+                    lenghtTouchBoard--;
+                    touchId--;
+                }
+                if (lenghtTouchBoard < Input.touchCount && originTouchId > touchId)
+                {
+                    lenghtTouchBoard++;
+                    touchId++;
+                }
+            }
+
             insideRing.transform.position = Input.GetTouch(touchId).position;
-            //UnityEngine.Debug.Log(insideRing.transform.localPosition.x);
             Vector3 rigPosition = new Vector3(insideRing.transform.localPosition.y * przliczenie, insideRing.transform.localPosition.x * przliczenie, 0);
             Ring.transform.localPosition = rigPosition;
+            RangeRing.transform.position = player.transform.position;
 
             /*
-            
+            float distance = Vector2.Distance(transform.position, Input.GetTouch(touchId).position);
             if(distance > 150)
             {
                 Vector2 pointPosition = new Vector2();
@@ -50,10 +73,7 @@ public class MineButton : MonoBehaviour
         }
     }
 
-    public void Mine()
-    {
-
-    }
+   
 
     private void OnEnable()
     {
@@ -64,9 +84,20 @@ public class MineButton : MonoBehaviour
         {
             if (touch.position.x >= 1500)
             {
+                lenghtTouchBoard = Input.touchCount;
                 touchId = touch.fingerId;
+                originTouchId = touch.fingerId;
             }
         }
+    }
+
+
+    private void OnDisable()
+    {
+
+        lenghtTouchBoard = 0;
+        player.GetComponent<PlayerObiect>().ataksystem2.AtackOne(Ring.transform.position);
+        RangeRing.transform.localPosition = new Vector3(0, 0, 0);
     }
 
 }

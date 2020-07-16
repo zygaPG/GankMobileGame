@@ -26,22 +26,19 @@ public class Chuck : NetworkBehaviour
 
     void Start()
     {
-        if (this.isServer)
-        {
+        
             atackSystem = Father.GetComponent<AtackSystem1>();
             rb = GetComponent<Rigidbody>();
             chuckSpeed = 5;
             Range = 4;
-            
-        }
+       
     }
 
 
     void FixedUpdate()
     {
-        if (this.isServer)
-        {
-            rb.MovePosition(transform.position + transform.forward * chuckSpeed * Time.deltaTime);
+        
+            rb.MovePosition(transform.position + transform.right * chuckSpeed * Time.deltaTime);
             float dist = Vector3.Distance(Father.transform.position, transform.position);
             if (dist >= Range || gothem)
             {
@@ -59,7 +56,7 @@ public class Chuck : NetworkBehaviour
 
                 target.RpcMoveFromWarpon(transform.rotation, -7);
             }
-        }
+        
     }
     
     private void OnTriggerEnter(Collider other)

@@ -16,27 +16,21 @@ public class Boolet : NetworkBehaviour
 
     void Start()
     {
-        if (this.isServer)
-        {
             atackSystem = Father.GetComponent<AtackSystem2>();
             rb = GetComponent<Rigidbody>();
             speed = 35;
             Range = 4;
             startPosition = transform.position;
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (this.isServer)
-        {
-            rb.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+            rb.MovePosition(transform.position + transform.right * speed * Time.deltaTime);
             if (Vector3.Distance(startPosition, transform.position) > Range)
             {
                 Destroy(this.gameObject);
             }
-        }
     }
 
     private void OnTriggerEnter(Collider other)
