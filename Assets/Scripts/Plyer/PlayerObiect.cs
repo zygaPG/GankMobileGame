@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerObiect : NetworkBehaviour
 {
+    public double pingValue;
+
     public string namePlayer = "anon";
     public float Hp = 100;
 
@@ -20,6 +22,7 @@ public class PlayerObiect : NetworkBehaviour
     
 
     public Vector3 velocity = new Vector3();
+
 
     public bool stun = false;
     public bool canRotate = true;
@@ -71,24 +74,25 @@ public class PlayerObiect : NetworkBehaviour
 
     void Update()
     {
-        if (animator.isActiveAndEnabled)
+        if (animator != null)
         {
-            animator.SetFloat("Speed", velocity.x);
+            if (animator.isActiveAndEnabled)
+            {
+                animator.SetFloat("Speed", velocity.x);
+            }
+            if (animator2.isActiveAndEnabled)
+            {
+                animator2.SetFloat("Speed", velocity.x);
+            }
         }
-        if (animator2.isActiveAndEnabled)
+        if (this.isLocalPlayer || this.isServer)
         {
-            animator2.SetFloat("Speed", velocity.x);
-        }
-        if (this.isLocalPlayer)
-        {
-            
+            pingValue = NetworkTime.rtt;
             if (!stun)
             {
-               
                 Drag();
                 characterCotroler.Move(transform.rotation * velocity * Time.deltaTime * 1.5f);
             }
-
           
         }
 
@@ -112,25 +116,25 @@ public class PlayerObiect : NetworkBehaviour
         }
         else
         {
-            velocity.y = -0.8f;
+            velocity.y = -4f;
         }
 
         if (velocity.x > 0.1)
         {
-            velocity.x -= 0.17f;
+            velocity.x -= 0.23f;
         }
         if (velocity.x < -0.1)
         {
-            velocity.x += 0.17f;
+            velocity.x += 0.23f;
         }
 
         if (velocity.z > 0.1)
         {
-            velocity.z -= 0.17f;
+            velocity.z -= 0.23f;
         }
         if (velocity.z < -0.1)
         {
-            velocity.z += 0.17f;
+            velocity.z += 0.23f;
         }
 
         if(velocity.z < 0.1 && velocity.z > -0.1)
@@ -142,6 +146,8 @@ public class PlayerObiect : NetworkBehaviour
             velocity.x = 0;
         }
     }
+
+
 
     [ClientRpc]
     public void RpcDostałem(float dmg, float stun)

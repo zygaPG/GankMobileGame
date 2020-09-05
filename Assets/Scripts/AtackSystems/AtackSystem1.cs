@@ -41,10 +41,10 @@ public class AtackSystem1 : NetworkBehaviour
 
 
     [Command]
-    public void CmdSpawnChuck(GameObject father, Vector3 position, Quaternion trans)
+    public void CmdSpawnChuck(GameObject father, Vector3 position, Quaternion rotat)
     {
 
-        chuck = Instantiate(chuckPrev, position, trans);
+        chuck = Instantiate(chuckPrev, position, rotat);
         NetworkServer.Spawn(chuck);
         chuck.GetComponent<Chuck>().Father = father;
     }
@@ -69,7 +69,7 @@ public class AtackSystem1 : NetworkBehaviour
 
     //---------------------------------------Auto-Atack(clsoe-distance)-------------
 
-    short atackAmunition = 3;
+    //short atackAmunition = 3;
     float autoAtackRange = 2;
     float autoAtackDmg = 10;
 
@@ -92,7 +92,7 @@ public class AtackSystem1 : NetworkBehaviour
         if(Physics.Raycast(WarponSpanPosition.transform.position, transform.right, out ray, autoAtackRange)){
             if (ray.collider.gameObject.tag == "Player")
             {
-                ray.collider.GetComponent<PlayerObiect>().RpcDostałem(autoAtackDmg, 1);
+                ray.collider.GetComponent<Hit>().GetHit(10, 0);
                 
             }
         }

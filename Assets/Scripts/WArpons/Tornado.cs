@@ -29,7 +29,7 @@ public class Tornado : NetworkBehaviour
         {
             if (other.gameObject.tag == "Player" && other.gameObject != Father)
             {
-                other.gameObject.GetComponent<PlayerObiect>().RpcDostałem(10, 0.2f);
+                other.GetComponent<Hit>().GetHit(10, 0);
 
             }
         }

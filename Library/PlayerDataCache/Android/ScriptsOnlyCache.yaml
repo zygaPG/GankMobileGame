@@ -18,6 +18,8 @@ ScriptsOnlyBuild:
     - PlayerConnection
     - PlayerObiect
     - Portal
+    - ShowFPS
+    - ShowPing
     - SlasAtack
     - Tornado
     Mirror.Components.dll:
@@ -51,6 +53,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
     - UnityEngine.UI.Text
+    com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -122,7 +126,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11974}
     - Class: 114
-      Script: {instanceID: 12258}
+      Script: {instanceID: 12256}
     - Class: 114
       Script: {instanceID: 12350}
     - Class: 114
@@ -150,15 +154,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13178}
     - Class: 114
-      Script: {instanceID: 13364}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13496}
+      Script: {instanceID: 13366}
     - Class: 114
-      Script: {instanceID: 13504}
+      Script: {instanceID: 13392}
     - Class: 114
-      Script: {instanceID: 13548}
+      Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 13616}
+      Script: {instanceID: 13508}
+    - Class: 114
+      Script: {instanceID: 13552}
+    - Class: 114
+      Script: {instanceID: 13620}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -924,7 +932,7 @@ ScriptsOnlyBuild:
     className: UIServerStatusSlot
   - hash:
       serializedVersion: 2
-      Hash: 1ca40b7964049f87011d0ed2a0d411a8
+      Hash: ee1f8fbfd220c367e57b05f24ad87356
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerObiect
@@ -984,6 +992,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: dc9e1f67b85ffb0c494bea14dcb79faa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShowFPS
+  - hash:
+      serializedVersion: 2
       Hash: 2bca67b5b15bd74f4ed58264903bca65
     assemblyName: Mirror.Components.dll
     namespaceName: Mirror
@@ -1006,6 +1020,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.MultipleAdditiveScenes
     className: MultiSceneNetManager
+  - hash:
+      serializedVersion: 2
+      Hash: 6fd2bb55b3ee5edb6040a1c5bccd0e07
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShowPing
   - hash:
       serializedVersion: 2
       Hash: 21d73eda81c18eacd2c91ad5dfaf2e32
@@ -1171,4 +1191,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/zygaLaptok/Desktop/GankV0.03.apk
+  playerPath: C:/Users/zygaLaptok/Desktop/GankTestVersion/GankV0.04.apk

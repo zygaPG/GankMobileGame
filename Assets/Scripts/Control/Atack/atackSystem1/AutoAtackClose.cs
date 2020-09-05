@@ -108,7 +108,7 @@ public class AutoAtackClose : MonoBehaviour
         float ruznicaKontuw = kont - kontGracza;
 
 
-        player.transform.Rotate(Vector3.up, ruznicaKontuw + 90);
+        player.transform.Rotate(Vector3.up, ruznicaKontuw);
         player.GetComponent<PlayerObiect>().ataksystem.AutoAtack();
         rangeBar.transform.localPosition = new Vector3(0, 0, 0);
     }

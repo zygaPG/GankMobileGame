@@ -7,7 +7,6 @@ public class Boolet : NetworkBehaviour
 {
     public float speed;
     public GameObject Father;
-    AtackSystem2 atackSystem;
     Rigidbody rb;
 
     float Range;
@@ -16,15 +15,14 @@ public class Boolet : NetworkBehaviour
 
     void Start()
     {
-            atackSystem = Father.GetComponent<AtackSystem2>();
             rb = GetComponent<Rigidbody>();
-            speed = 35;
-            Range = 4;
+            speed = 10;
+            Range = 6;
             startPosition = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    void FixedUpdate()
     {
             rb.MovePosition(transform.position + transform.right * speed * Time.deltaTime);
             if (Vector3.Distance(startPosition, transform.position) > Range)
@@ -39,7 +37,7 @@ public class Boolet : NetworkBehaviour
         {
             if (other.gameObject.tag == "Player" && other.gameObject != Father)
             {
-                other.gameObject.GetComponent<PlayerObiect>().RpcDostałem(10, 0);
+                other.gameObject.GetComponent<Hit>().GetHit(10, 0);
                 Destroy(this.gameObject);
             }
         }

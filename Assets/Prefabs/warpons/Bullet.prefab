@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3844955609762405511}
   - component: {fileID: 3844955609762405510}
   - component: {fileID: 8446783201722781683}
-  - component: {fileID: -430399077941713022}
   - component: {fileID: -65865690198236736}
+  - component: {fileID: -430399077941713022}
   - component: {fileID: 5170913729029417434}
   m_Layer: 0
   m_Name: Bullet
@@ -113,22 +113,6 @@ MonoBehaviour:
   serverOnly: 0
   m_AssetId: 
   hasSpawned: 0
---- !u!114 &-430399077941713022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3844955609762405561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f7f4fab30a38974ab751c0eea5fbe34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  speed: 8
-  Father: {fileID: 0}
 --- !u!114 &-65865690198236736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +131,22 @@ MonoBehaviour:
   localPositionSensitivity: 0.01
   localRotationSensitivity: 0.01
   localScaleSensitivity: 0.01
+--- !u!114 &-430399077941713022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3844955609762405561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7f4fab30a38974ab751c0eea5fbe34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  speed: 8
+  Father: {fileID: 0}
 --- !u!54 &5170913729029417434
 Rigidbody:
   m_ObjectHideFlags: 0

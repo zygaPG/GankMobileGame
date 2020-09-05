@@ -14,24 +14,21 @@ public class Chuck : NetworkBehaviour
     public GameObject Father;
     public float Range = 4;
 
-    public bool back = false;
+    public bool back = true;
 
     public AtackSystem1 atackSystem;
 
     bool gothem = false;
-    //GameObject target;
-    PlayerObiect target;
 
-    
 
     void Start()
     {
-        
             atackSystem = Father.GetComponent<AtackSystem1>();
             rb = GetComponent<Rigidbody>();
-            chuckSpeed = 5;
-            Range = 4;
-       
+            chuckSpeed = 10;
+            Range = 6;
+            back = false;
+            gothem = false;
     }
 
 
@@ -40,23 +37,26 @@ public class Chuck : NetworkBehaviour
         
             rb.MovePosition(transform.position + transform.right * chuckSpeed * Time.deltaTime);
             float dist = Vector3.Distance(Father.transform.position, transform.position);
-            if (dist >= Range || gothem)
-            {
-                chuckSpeed = -7;
-                back = true;
-            }
-            if (back && dist < 1.2f)
-            {
 
-                Destroy(this.gameObject);
-                atackSystem.RpcGetBack();
+       
+            if (dist >= Range && !gothem)
+            {
+                back = true;
+                chuckSpeed = -20;
             }
+
             if (gothem)
             {
-
-                target.RpcMoveFromWarpon(transform.rotation, -7);
+                chuckSpeed = -7;
             }
         
+
+        if (dist < 1.2f && back)
+        {
+            Destroy(this.gameObject);
+            atackSystem.RpcGetBack();
+        }
+
     }
     
     private void OnTriggerEnter(Collider other)
@@ -65,9 +65,10 @@ public class Chuck : NetworkBehaviour
         {
             if (other.gameObject.tag == "Player" && other.gameObject != Father)
             {
-                other.gameObject.GetComponent<PlayerObiect>().RpcDostałem(10, 5);
-                target = other.GetComponent<PlayerObiect>();
+                back = true;
                 gothem = true;
+                other.GetComponent<Hit>().GetHit(10, 0, this.transform.rotation, Father.transform.position);
+                this.GetComponent<Collider>().enabled = false;
             }
         }
     }

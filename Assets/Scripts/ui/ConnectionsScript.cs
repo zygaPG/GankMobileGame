@@ -32,7 +32,7 @@ public class ConnectionsScript : NetworkBehaviour
     public GameObject newChempionSelectMenu;
     public GameObject mainMenue;
 
-
+    
 
 
     public void LocalHost() 
@@ -53,8 +53,10 @@ public class ConnectionsScript : NetworkBehaviour
 
     public void OnConnectedToServer()
     {
-        mainMenue.SetActive(false);
-        newChempionSelectMenu.SetActive(true);
+        
+            mainMenue.SetActive(false);
+            newChempionSelectMenu.SetActive(true);
+        
         
     }
 

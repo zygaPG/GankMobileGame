@@ -5,6 +5,7 @@ using Mirror;
 
 public class PlayerConnection : NetworkBehaviour
 {
+   
 
     ConnectionsScript conectScript;
 
@@ -12,6 +13,7 @@ public class PlayerConnection : NetworkBehaviour
     public GameObject character_1;
     public GameObject character_2;
 
+    
 
     int myArena;
     
@@ -27,8 +29,8 @@ public class PlayerConnection : NetworkBehaviour
         }
      }
 
+  
 
-    
 
 
 

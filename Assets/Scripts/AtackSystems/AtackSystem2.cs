@@ -24,7 +24,7 @@ public class AtackSystem2 : NetworkBehaviour
 
 
 
-    //-----------------------Autoatack----------------------
+    //-----------------------Autoatack--------Bullet--------------
 
     short AtackAmunition = 3;
     short MaxAmunition = 3;
@@ -35,7 +35,7 @@ public class AtackSystem2 : NetworkBehaviour
             player.animator.SetTrigger("Trow");
             AtackAmunition--;
             player.slowMove = true;
-            CmdAutoAtack(this.gameObject, trans.position, trans.localRotation);
+            CmdAutoAtack(this.gameObject, WarponSpanPosition.transform.position, trans.localRotation);
             StartCoroutine(WaitSloww(0.3f));
             StartCoroutine(AmunitionReload(2));
         }
@@ -63,7 +63,7 @@ public class AtackSystem2 : NetworkBehaviour
     }
     //-------------------------------------------------------
 
-    //--------------------------Atack-One--------------------
+    //--------------------------Atack-One--------Mine------------
 
     short mineAmunition = 3;
     public void AtackOne(Vector3 positionRing)
@@ -98,14 +98,14 @@ public class AtackSystem2 : NetworkBehaviour
     }
 
     [Command]
-    public void CmdAtackTwo()
+    public void CmdAtackTwo() //---------------------------Kick-----------------------
     {
         RaycastHit ray;
         if (Physics.Raycast(WarponSpanPosition.position, transform.right, out ray, 2))
         {
             if (ray.collider.gameObject.tag == "Player")
             {
-                ray.collider.GetComponent<PlayerObiect>().RpcDostałem(0, 5);
+                ray.collider.GetComponent<Hit>().GetHit( 10, 0, 4, player.transform.rotation);
 
             }
 
