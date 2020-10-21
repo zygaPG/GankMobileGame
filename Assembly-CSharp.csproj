@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_2;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;UNITY_ASTC_ONLY_DECOMPRESS;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;MIRROR;MIRROR_1726_OR_NEWER;MIRROR_3_0_OR_NEWER;MIRROR_3_12_OR_NEWER;MIRROR_4_0_OR_NEWER;MIRROR_5_0_OR_NEWER;MIRROR_6_0_OR_NEWER;MIRROR_7_0_OR_NEWER;MIRROR_8_0_OR_NEWER;MIRROR_9_0_OR_NEWER;MIRROR_10_0_OR_NEWER;MIRROR_11_0_OR_NEWER;MIRROR_12_0_OR_NEWER;MIRROR_13_0_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_2;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;UNITY_ASTC_ONLY_DECOMPRESS;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;MIRROR;MIRROR_1726_OR_NEWER;MIRROR_3_0_OR_NEWER;MIRROR_3_12_OR_NEWER;MIRROR_4_0_OR_NEWER;MIRROR_5_0_OR_NEWER;MIRROR_6_0_OR_NEWER;MIRROR_7_0_OR_NEWER;MIRROR_8_0_OR_NEWER;MIRROR_9_0_OR_NEWER;MIRROR_10_0_OR_NEWER;MIRROR_11_0_OR_NEWER;MIRROR_12_0_OR_NEWER;MIRROR_13_0_OR_NEWER;MIRROR_14_0_OR_NEWER;MIRROR_15_0_OR_NEWER;MIRROR_16_0_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -63,29 +63,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\!!!!MainMenue\PlayerMM.cs" />
-    <Compile Include="Assets\!!!!MainMenue\StartMenue.cs" />
-    <Compile Include="Assets\!!!!MainMenue\roomScene\roooom.cs" />
+    <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\ArenaSpawner.cs" />
+    <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\PlayerMM.cs" />
+    <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\RoomManager.cs" />
+    <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\RoomPanel.cs" />
+    <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\StartMenue.cs" />
+    <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\playerFunctions.cs" />
+    <Compile Include="Assets\!!!!Effects\Blit\Blit.cs" />
+    <Compile Include="Assets\!!!!Effects\Blit\BlitPass.cs" />
+    <Compile Include="Assets\Characters\Character_one_1\AtackSystem2.cs" />
+    <Compile Include="Assets\Characters\Character_one_1\BulletControl.cs" />
+    <Compile Include="Assets\Characters\Character_one_1\Kick.cs" />
+    <Compile Include="Assets\Characters\Character_one_1\Mine.cs" />
+    <Compile Include="Assets\Characters\Character_one_1\MineButton.cs" />
+    <Compile Include="Assets\Characters\Character_two_2\AtackSystem1.cs" />
+    <Compile Include="Assets\Characters\Character_two_2\AutoAtackClose.cs" />
+    <Compile Include="Assets\Characters\Character_two_2\Boolet.cs" />
+    <Compile Include="Assets\Characters\Character_two_2\Chuck.cs" />
+    <Compile Include="Assets\Characters\Character_two_2\ChuckControl.cs" />
+    <Compile Include="Assets\Characters\Character_two_2\SlasAtack.cs" />
+    <Compile Include="Assets\Characters\Character_two_2\Tornado.cs" />
+    <Compile Include="Assets\Characters\MoveControl.cs" />
+    <Compile Include="Assets\Characters\PlayerObiect.cs" />
     <Compile Include="Assets\Scripts\Arena\Arena.cs" />
     <Compile Include="Assets\Scripts\Arena\Portal.cs" />
-    <Compile Include="Assets\Scripts\AtackSystems\AtackSystem1.cs" />
-    <Compile Include="Assets\Scripts\AtackSystems\AtackSystem2.cs" />
     <Compile Include="Assets\Scripts\CameraSmoothMove.cs" />
-    <Compile Include="Assets\Scripts\Control\Atack\atackSystem1\AutoAtackClose.cs" />
-    <Compile Include="Assets\Scripts\Control\Atack\atackSystem1\SlasAtakClose\SlasAtack.cs" />
-    <Compile Include="Assets\Scripts\Control\Atack\atackSystem1\chuck\ChuckControl.cs" />
-    <Compile Include="Assets\Scripts\Control\Atack\atackSystem2\BlueBullet\BulletControl.cs" />
-    <Compile Include="Assets\Scripts\Control\Atack\atackSystem2\Mine\MineButton.cs" />
-    <Compile Include="Assets\Scripts\Control\moving\MoveControl.cs" />
+    <Compile Include="Assets\Scripts\ChempionSelect\CharacterRotation.cs" />
     <Compile Include="Assets\Scripts\Plyer\GetDmg\Hit.cs" />
     <Compile Include="Assets\Scripts\Plyer\LookAtMouse.cs" />
-    <Compile Include="Assets\Scripts\Plyer\PlayerObiect.cs" />
     <Compile Include="Assets\Scripts\Plyer\canvas\lookAtcamera.cs" />
-    <Compile Include="Assets\Scripts\WArpons\Boolet.cs" />
-    <Compile Include="Assets\Scripts\WArpons\Chuck.cs" />
-    <Compile Include="Assets\Scripts\WArpons\Kick.cs" />
-    <Compile Include="Assets\Scripts\WArpons\Mine.cs" />
-    <Compile Include="Assets\Scripts\WArpons\Tornado.cs" />
     <Compile Include="Assets\Scripts\WArpons\effects\ExplosionAnim\ExplosionDelete.cs" />
     <Compile Include="Assets\Scripts\WArpons\effects\attraction.cs" />
     <Compile Include="Assets\Scripts\WArpons\effects\moveMove.cs" />
@@ -94,16 +100,20 @@
     <Compile Include="Assets\Scripts\ui\ping&amp;FPS\ShowFPS.cs" />
     <Compile Include="Assets\Scripts\ui\ping&amp;FPS\ShowPing.cs" />
     <Compile Include="Assets\ToDo.cs" />
+    <Compile Include="Assets\UnityPackages\JsonNetSample\JsonNetSample.cs" />
     <None Include="Assets\ScriptTemplates\51-Mirror__Network Authenticator-NewNetworkAuthenticator.cs.txt" />
     <None Include="Assets\ScriptTemplates\53-Mirror__Network Observer-NewNetworkObserver.cs.txt" />
+    <None Include="Assets\StreamingAssets\TestResults.xml" />
     <None Include="Assets\ScriptTemplates\56-Mirror__Network Discovery-NewNetworkDiscovery.cs.txt" />
     <None Include="Assets\Mirror\version.txt" />
     <None Include="Assets\Mirror\Readme.txt" />
     <None Include="Assets\ScriptTemplates\52-Mirror__Network Behaviour-NewNetworkBehaviour.cs.txt" />
+    <None Include="Assets\!!!!Effects\toonShader.shader" />
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\License.txt" />
     <None Include="Assets\ScriptTemplates\55-Mirror__Network Room Player-NewNetworkRoomPlayer.cs.txt" />
     <None Include="Assets\ScriptTemplates\50-Mirror__Network Manager-NewNetworkManager.cs.txt" />
     <None Include="Assets\ScriptTemplates\54-Mirror__Network Room Manager-NewNetworkRoomManager.cs.txt" />
+    <None Include="Assets\!!!!Effects\Sobel.hlsl" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Users/zygaLaptok/Desktop/unity/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -292,6 +302,9 @@
     </Reference>
     <Reference Include="Mono.CecilX.Rocks">
       <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Assets/UnityPackages/JsonNet/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Users/zygaLaptok/Desktop/unity/2019.4.2f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -638,8 +651,14 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Users/zygaLaptok/Desktop/unity/2019.4.2f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
@@ -647,8 +666,20 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -664,6 +695,15 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/zygaLaptok/Desktop/git/GankMobileGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
@@ -700,13 +740,29 @@
       <Project>{C578939E-093C-1359-3A38-AF9390FE0E38}</Project>
       <Name>Ninja.WebSockets</Name>
     </ProjectReference>
+    <ProjectReference Include="Mirror.Cloud.csproj">
+      <Project>{6C3374DA-AF84-A567-6D0D-E96B390D3073}</Project>
+      <Name>Mirror.Cloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
+      <Project>{5C994ADD-E90A-62D2-60F3-3D021C22C717}</Project>
+      <Name>Mirror.Examples.Cloud.Pong</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.csproj">
       <Project>{B8C4D92F-0CDE-4E2D-401F-E2078877059C}</Project>
       <Name>Mirror</Name>
     </ProjectReference>
+    <ProjectReference Include="Mirror.example.RigidbodyPhysics.csproj">
+      <Project>{EA7CDFB0-2E82-1734-35ED-A5352C7602F2}</Project>
+      <Name>Mirror.example.RigidbodyPhysics</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.Editor.csproj">
       <Project>{438B93D5-DC24-1450-E0B7-9E1E865A7C30}</Project>
       <Name>Mirror.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.Cloud.GUI.csproj">
+      <Project>{6D80581B-C58F-D693-06DA-54EB38C9D60D}</Project>
+      <Name>Mirror.Examples.Cloud.GUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

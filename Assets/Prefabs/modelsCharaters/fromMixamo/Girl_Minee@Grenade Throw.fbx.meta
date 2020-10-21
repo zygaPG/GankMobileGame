@@ -1,0 +1,397 @@
+fileFormatVersion: 2
+guid: 76809299278fe774c9d5fb862e56af2c
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -533780400521510742
+    second: Grenade Throw
+  - first:
+      74: 2936505214672696618
+    second: Szkielet|SzkieletAction
+  - first:
+      74: 3275728758696072499
+    second: Szkielet|SzkieletAction.001
+  - first:
+      74: -203655887218126122
+    second: mixamo.com
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Grenade Throw
+      takeName: Szkielet|BodyAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Szkielet
+        weight: 1
+      - path: Szkielet/Bone
+        weight: 1
+      - path: Szkielet/Bone/Bone.001
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.010
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.010/Bone.010_end
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.011
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.011/Bone.012
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.011/Bone.012/Bone.012_end
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017/Bone.017_end
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016/Bone.018
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016/Bone.018/Bone.018_end
+        weight: 1
+      - path: Szkielet/Bone/udo
+        weight: 0
+      - path: Szkielet/Bone/udo/pisxczel
+        weight: 0
+      - path: Szkielet/Bone/udo/pisxczel/stopa
+        weight: 0
+      - path: Szkielet/Bone/udo/pisxczel/stopa/stopa_end
+        weight: 0
+      - path: Szkielet/Bone/udo.001
+        weight: 0
+      - path: Szkielet/Bone/udo.001/pisxczel.001
+        weight: 0
+      - path: Szkielet/Bone/udo.001/pisxczel.001/stopa.001
+        weight: 0
+      - path: Szkielet/Bone/udo.001/pisxczel.001/stopa.001/stopa.001_end
+        weight: 0
+      - path: Szkielet/kolano
+        weight: 0
+      - path: Szkielet/kolano/kolano_end
+        weight: 0
+      - path: Szkielet/kolano.001
+        weight: 0
+      - path: Szkielet/kolano.001/kolano.001_end
+        weight: 0
+      - path: Szkielet/pienta
+        weight: 0
+      - path: Szkielet/pienta/pienta_end
+        weight: 0
+      - path: Szkielet/pienta.001
+        weight: 0
+      - path: Szkielet/pienta.001/pienta.001_end
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Szkielet|SzkieletAction
+      takeName: Szkielet|SzkieletAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 275
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Szkielet|SzkieletAction.001
+      takeName: Szkielet|SzkieletAction.001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: mixamo.com
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 83
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Szkielet
+        weight: 1
+      - path: Szkielet/Bone
+        weight: 1
+      - path: Szkielet/Bone/Bone.001
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.010
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.010/Bone.010_end
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.011
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.011/Bone.012
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.011/Bone.012/Bone.012_end
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017/Bone.017_end
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016/Bone.018
+        weight: 1
+      - path: Szkielet/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.013/Bone.014/Bone.015/Bone.016/Bone.018/Bone.018_end
+        weight: 1
+      - path: Szkielet/Bone/udo
+        weight: 0
+      - path: Szkielet/Bone/udo/pisxczel
+        weight: 0
+      - path: Szkielet/Bone/udo/pisxczel/stopa
+        weight: 0
+      - path: Szkielet/Bone/udo/pisxczel/stopa/stopa_end
+        weight: 0
+      - path: Szkielet/Bone/udo.001
+        weight: 0
+      - path: Szkielet/Bone/udo.001/pisxczel.001
+        weight: 0
+      - path: Szkielet/Bone/udo.001/pisxczel.001/stopa.001
+        weight: 0
+      - path: Szkielet/Bone/udo.001/pisxczel.001/stopa.001/stopa.001_end
+        weight: 0
+      - path: Szkielet/kolano
+        weight: 0
+      - path: Szkielet/kolano/kolano_end
+        weight: 0
+      - path: Szkielet/kolano.001
+        weight: 0
+      - path: Szkielet/kolano.001/kolano.001_end
+        weight: 0
+      - path: Szkielet/pienta
+        weight: 0
+      - path: Szkielet/pienta/pienta_end
+        weight: 0
+      - path: Szkielet/pienta.001
+        weight: 0
+      - path: Szkielet/pienta.001/pienta.001_end
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
