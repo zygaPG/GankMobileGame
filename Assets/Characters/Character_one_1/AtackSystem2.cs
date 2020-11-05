@@ -35,11 +35,13 @@ public class AtackSystem2 : NetworkBehaviour
     {
         if (AtackAmunition > 0)
         {
-            player.animator.SetTrigger("Trow");
+            player.animator.SetTrigger("Bullet");
             AtackAmunition--;
-            player.slowMove = true;
-            CmdAutoAtack(this.gameObject, WarponSpanPosition.transform.position, trans.rotation, player.key);
-            StartCoroutine(WaitSloww(0.3f));
+            //player.slowMove = true;
+            CmdAutoAtack(this.gameObject, WarponSpanPosition.transform.position, player.transform.rotation, player.key);
+            player.stun = true;
+            player.canRotate = false;
+            StartCoroutine(WaitForKick(0.3f));
             StartCoroutine(AmunitionReload(2));
         }
     }
@@ -113,8 +115,6 @@ public class AtackSystem2 : NetworkBehaviour
                 ray.collider.GetComponent<Hit>().GetHit( 10, 0, 4, player.transform.rotation);
 
             }
-
-            
         }
         
     }

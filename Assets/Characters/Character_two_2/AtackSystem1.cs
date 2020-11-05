@@ -13,6 +13,12 @@ public class AtackSystem1 : NetworkBehaviour
     public PlayerObiect player;
     public GameObject WarponSpanPosition;
 
+    [SerializeField]
+    private moveMove moveMove;
+    [SerializeField]
+    private AutoatackControl autoatackControl;
+
+
     private void Start()
     {
         autoAtackRange = 2;
@@ -86,21 +92,14 @@ public class AtackSystem1 : NetworkBehaviour
         player.stun = true;
         CmdAutoAtack();
         StartCoroutine(StunTime(0.5f));
+       // moveMove.enabled = true;
+        //moveMove.SetValues(3, this.transform.rotation);
     }
 
     [Command]
     public void CmdAutoAtack()
     {
-        
-        RaycastHit ray;
-        if(Physics.Raycast(WarponSpanPosition.transform.position, transform.right, out ray, autoAtackRange)){
-            if (ray.collider.gameObject.tag == "Player")
-            {
-                ray.collider.GetComponent<Hit>().GetHit(10, 0);
-                
-            }
-        }
-        
+        autoatackControl.enabled = true;
     }
     
     

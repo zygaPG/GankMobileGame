@@ -15,7 +15,7 @@ public class BulletControl : MonoBehaviour
     //public GameObject player;
 
     public GameObject sircle;
-    
+    //public GameObject player;
 
     float kont;
 
@@ -109,13 +109,18 @@ public class BulletControl : MonoBehaviour
             }
         }
     }
-
-
+    [SerializeField]
+    PlayerObiect plaobj;
     private void OnDisable()
     {
-
-        atackSystem.AutoAtack(rangeBar.transform);
-        rangeBar.transform.localPosition = new Vector3(0, 0, 0);
+        if (!plaobj.stun)
+        {
+            float kontGracza = Mathf.Asin(plaobj.transform.rotation.y) * 180 / Mathf.PI * 2;
+            float ruznicaKontuw = kont - kontGracza;
+            plaobj.transform.Rotate(Vector3.up, ruznicaKontuw);
+            atackSystem.AutoAtack(rangeBar.transform);
+            rangeBar.transform.localPosition = new Vector3(0, 0, 0);
+        }
     }
 
 }

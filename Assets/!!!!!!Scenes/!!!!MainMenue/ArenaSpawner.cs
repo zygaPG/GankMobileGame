@@ -33,6 +33,7 @@ public class ArenaSpawner : NetworkBehaviour
     public void SelectChemp(int chempNum)
     {
         CmdSpawnSelectedPlayer(chempNum, arenaOwner,  MachCheckerKey, myPlayer.netIdentity);
+        this.gameObject.SetActive(false);
         //selectMenue.SetActive(false);
         //Destroy(myPlayer.gameObject);
     }
