@@ -15,7 +15,7 @@ public class ArenaSpawner : NetworkBehaviour
     public GameObject[] playerPrev = new GameObject[10];
 
     public GameObject selectMenue;
-
+    public GameSpector gameSpector;
     
     //public GameObject chempionSelectCanvas;
 
@@ -27,13 +27,13 @@ public class ArenaSpawner : NetworkBehaviour
     public System.Guid MachCheckerKey;
 
     public bool arenaOwner;
-    
-    
+    [SerializeField]
+    private GameObject chempionSelect;
 
     public void SelectChemp(int chempNum)
     {
         CmdSpawnSelectedPlayer(chempNum, arenaOwner,  MachCheckerKey, myPlayer.netIdentity);
-        this.gameObject.SetActive(false);
+        chempionSelect.SetActive(false);
         //selectMenue.SetActive(false);
         //Destroy(myPlayer.gameObject);
     }
@@ -54,6 +54,7 @@ public class ArenaSpawner : NetworkBehaviour
         //GameObject newPlayer = conn.gameObject;
         newPlayer.GetComponent<NetworkMatchChecker>().matchId = keyy;
         newPlayer.GetComponent<PlayerObiect>().key = keyy;
+        newPlayer.GetComponent<PlayerObiect>().gameSpector = gameSpector;
 
         //newPlayer.GetComponent<playerFunctions>().keyyy = keyy; //--------------Important--------------
         //newPlayer.GetComponent<playerFunctions>().mape = mappp; //--------------Important--------------
@@ -64,28 +65,6 @@ public class ArenaSpawner : NetworkBehaviour
 
     }
 
-
-
-
-
-
-
-
-    [Command(ignoreAuthority = true)]
-    public void CmdSpawnPlayers(NetworkIdentity conn)
-    {
-       // GameObject newPlayer;
-        //if (NetManager.roomOwner)
-       // {
-           // newPlayer = Instantiate(playerPrev1, spawn1);
-       // }
-       // else
-       // {
-           // newPlayer = Instantiate(playerPrev2, spawn2);
-       // }
-       // NetworkServer.Spawn(newPlayer);
-       // NetworkServer.AddPlayerForConnection(conn.connectionToClient, newPlayer);
-    }
 
 
 

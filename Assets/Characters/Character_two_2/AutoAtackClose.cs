@@ -74,16 +74,22 @@ public class AutoAtackClose : MonoBehaviour
             }
 
 
-
-
             float kontGracza = Mathf.Asin(rangeBar.transform.rotation.y) * 180 / Mathf.PI * 2;
-
-
 
             float ruznicaKontuw = kont - kontGracza;
 
             rangeBar.transform.Rotate(Vector3.up, ruznicaKontuw);
 
+
+            RaycastHit ray;
+            if (Physics.Raycast(atackSystem.rayCaster.transform.position, atackSystem.rayCaster.transform.right, out ray, 20))
+            {
+
+                if (ray.collider.gameObject.tag == "EnemyPlayer")
+                {
+                    atackSystem.targetEnemy = ray.collider.GetComponent<PlayerObiect>();
+                }
+            }
         }
     }
 
@@ -99,17 +105,34 @@ public class AutoAtackClose : MonoBehaviour
                 touchId = touch.fingerId;
             }
         }
+        onClickk = true;
+        StartCoroutine(OnClicker());
     }
+
+    private bool onClickk;
+    private IEnumerator OnClicker()
+    {
+        yield return new WaitForSeconds(.5f);
+        onClickk = false;
+    }
+
 
     private void OnDisable()
     {
 
         originTouchId = 99;
         touchId = 99;
-        float kontGracza = Mathf.Asin(player.transform.rotation.y) * 180 / Mathf.PI * 2;
-        float ruznicaKontuw = kont - kontGracza;
 
-        player.transform.Rotate(Vector3.up, ruznicaKontuw);
+        if (onClickk && atackSystem.targetEnemy)
+        {
+            player.transform.right = (new Vector3(atackSystem.targetEnemy.transform.position.x, player.transform.position.y, atackSystem.targetEnemy.transform.position.z) - player.transform.position).normalized;
+        }
+        else
+        {
+            float kontGracza = Mathf.Asin(player.transform.rotation.y) * 180 / Mathf.PI * 2;
+            float ruznicaKontuw = kont - kontGracza;
+            player.transform.Rotate(Vector3.up, ruznicaKontuw);
+        }
         atackSystem.AutoAtack();
         rangeBar.transform.localPosition = new Vector3(0, -100, 0);
     }

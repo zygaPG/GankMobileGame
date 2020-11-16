@@ -47,9 +47,6 @@ public class BulletControl : MonoBehaviour
             }
 
 
-            
-
-
 
             rangeBar.transform.position = this.transform.position;
             sircle.transform.position = Input.GetTouch(touchId).position;
@@ -94,7 +91,22 @@ public class BulletControl : MonoBehaviour
 
             rangeBar.transform.Rotate(Vector3.up, ruznicaKontuw);
 
+
+
+            RaycastHit ray;
+            if (Physics.Raycast(atackSystem.rayCaster.transform.position, atackSystem.rayCaster.transform.right, out ray, 20))
+            {
+
+                if (ray.collider.gameObject.tag == "EnemyPlayer")
+                {
+                    atackSystem.targetEnemy = ray.collider.GetComponent<PlayerObiect>();
+                }
+            }
+
         }
+
+
+
     }
 
     private void OnEnable()
@@ -108,17 +120,36 @@ public class BulletControl : MonoBehaviour
                 touchId = touch.fingerId;
             }
         }
+        onClickk = true;
+        StartCoroutine(OnClicker());
     }
+
+    private bool onClickk;
+    private IEnumerator OnClicker()
+    {
+        yield return new WaitForSeconds(.5f);
+        onClickk = false;
+    }
+
     [SerializeField]
     PlayerObiect plaobj;
     private void OnDisable()
     {
         if (!plaobj.stun)
         {
-            float kontGracza = Mathf.Asin(plaobj.transform.rotation.y) * 180 / Mathf.PI * 2;
-            float ruznicaKontuw = kont - kontGracza;
-            plaobj.transform.Rotate(Vector3.up, ruznicaKontuw);
-            atackSystem.AutoAtack(rangeBar.transform);
+            if(onClickk && atackSystem.targetEnemy){
+
+                plaobj.transform.right = (new Vector3(atackSystem.targetEnemy.transform.position.x, plaobj.transform.position.y, atackSystem.targetEnemy.transform.position.z) - plaobj.transform.position).normalized;
+                atackSystem.AutoAtack(plaobj.transform);
+            }
+            else
+            {
+                float kontGracza = Mathf.Asin(plaobj.transform.rotation.y) * 180 / Mathf.PI * 2;
+                float ruznicaKontuw = kont - kontGracza;
+                plaobj.transform.Rotate(Vector3.up, ruznicaKontuw);
+                atackSystem.AutoAtack(rangeBar.transform);
+            }
+
             rangeBar.transform.localPosition = new Vector3(0, 0, 0);
         }
     }

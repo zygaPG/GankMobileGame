@@ -27,7 +27,7 @@ public class Tornado : NetworkBehaviour
     {
         if (this.isServer)
         {
-            if (other.gameObject.tag == "Player" && other.gameObject != Father)
+            if (other.gameObject.tag == "EnemyPlayer" && other.gameObject != Father)
             {
                 other.GetComponent<Hit>().GetHit(10, 0);
 

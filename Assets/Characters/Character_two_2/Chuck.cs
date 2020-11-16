@@ -43,6 +43,8 @@ public class Chuck : NetworkBehaviour
             {
                 back = true;
                 chuckSpeed = -20;
+                Destroy(this.gameObject);
+                atackSystem.RpcGetBack();
             }
 
             if (gothem)
@@ -63,7 +65,7 @@ public class Chuck : NetworkBehaviour
     {
         if (this.isServer)
         {
-            if (other.gameObject.tag == "Player" && other.gameObject != Father)
+            if (other.gameObject.tag == "EnemyPlayer" && other.gameObject != Father)
             {
                 back = true;
                 gothem = true;

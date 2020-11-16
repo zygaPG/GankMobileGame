@@ -16,9 +16,9 @@ public class Kick : MonoBehaviour
     public GameObject player;
 
     float kont;
-    
 
-   
+
+
     void Update()
     {
         if (touchId != 99)
@@ -36,9 +36,6 @@ public class Kick : MonoBehaviour
                     touchId++;
                 }
             }
-
-
-
 
 
 
@@ -80,11 +77,20 @@ public class Kick : MonoBehaviour
             float kontGracza = Mathf.Asin(rangeBar.transform.rotation.y) * 180 / Mathf.PI * 2;
 
 
-
             float ruznicaKontuw = kont - kontGracza;
 
             rangeBar.transform.Rotate(Vector3.up, ruznicaKontuw);
+            atackSystem.rayCaster.Rotate(Vector3.up, ruznicaKontuw);
 
+            RaycastHit ray;
+            if (Physics.Raycast(atackSystem.rayCaster.transform.position, atackSystem.rayCaster.transform.right, out ray, 20))
+            {
+
+                if (ray.collider.gameObject.tag == "EnemyPlayer")
+                {
+                    atackSystem.targetEnemy = ray.collider.GetComponent<PlayerObiect>();
+                }
+            }
         }
     }
 
@@ -100,24 +106,44 @@ public class Kick : MonoBehaviour
                 touchId = touch.fingerId;
             }
         }
+        onClickk = true;
+        StartCoroutine(OnClicker());
     }
+
+    private bool onClickk;
+    private IEnumerator OnClicker()
+    {
+        yield return new WaitForSeconds(.5f);
+        onClickk = false;
+    }
+
     [SerializeField]
     PlayerObiect plaobj;
     private void OnDisable()
     {
-        
+
         if (!plaobj.stun)
         {
             plaobj.stun = true;
             plaobj.canRotate = false;
             originTouchId = 99;
             touchId = 99;
-            float kontGracza = Mathf.Asin(player.transform.rotation.y) * 180 / Mathf.PI * 2;
-            float ruznicaKontuw = kont - kontGracza;
-            player.transform.Rotate(Vector3.up, ruznicaKontuw);
+
+            if (onClickk && atackSystem.targetEnemy)
+            { 
+
+                player.transform.right = (new Vector3(atackSystem.targetEnemy.transform.position.x, player.transform.position.y, atackSystem.targetEnemy.transform.position.z) - player.transform.position).normalized;
+
+            }
+            else
+            {
+                float kontGracza = Mathf.Asin(player.transform.rotation.y) * 180 / Mathf.PI * 2;
+                float ruznicaKontuw = kont - kontGracza;
+                player.transform.Rotate(Vector3.up, ruznicaKontuw);
+            }
             atackSystem.Kickatack();
             rangeBar.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
-
 }
+    

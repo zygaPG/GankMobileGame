@@ -16,7 +16,7 @@ public class RoomPanel : MonoBehaviour
     {
         if (empty)
         {
-            romManager.GoToRoom(idd);
+           // romManager.GoToRoom(idd);
         }
     }
 

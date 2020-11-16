@@ -9,7 +9,11 @@ public class PlayerObiect : NetworkBehaviour
     public double pingValue;
 
     public string namePlayer = "anon";
+    public float MaxHp = 100;
     public float Hp = 100;
+
+    public float speedValue = 4;
+    public float speedSlow = 2.5f;
 
     public CharacterController characterCotroler;
     public GameObject cameraaa;
@@ -34,9 +38,14 @@ public class PlayerObiect : NetworkBehaviour
 
     public System.Guid key;
 
+    public GameSpector gameSpector;
+
     public Animator animator;
     //public Animator animator2;
+    private short inGameSpectorNum;
 
+    
+    public ParticleSystem walkingSmoke;
 
     void Start()
     {
@@ -47,48 +56,60 @@ public class PlayerObiect : NetworkBehaviour
             cameraaa = GameObject.Find("Main Camera");
             cameraaa.GetComponent<CameraSmoothMove>().target = this.gameObject.transform;
             cameraaa.GetComponent<CameraSmoothMove>().enabled = true;
-            //cameraaa.GetComponent<MoveControl>().playerObiect = this;
             
-            //cameraaa.GetComponent<MoveControl>().enabled = true;
-            //cameraaa.GetComponent<MineButton>().RangeRing = cameraaa.MineButton.Find("RangeRing");
-            //-----------------------------------------------------Atack-System-2----Controls--------------------------
-            //cameraaa.GetComponent<MineButton>().player = this.gameObject;
-            //cameraaa.GetComponent<BulletControl>().player = this.gameObject;
-            //cameraaa.GetComponent<Kick>().player = this.gameObject;
-            //cameraaa.GetComponent<ChuckControl>().player = this.gameObject;
-            //cameraaa.GetComponent<SlasAtack>().player = this.gameObject;
-            //cameraaa.GetComponent<AutoAtackClose>().player = this.gameObject;
-
-            //ataksystem = GetComponent<AtackSystem1>();
-            //ataksystem2 = GetComponent<AtackSystem2>();
         }
 
-
-
+        if (gameSpector)
+        {
+            if (gameSpector.players[0] == null)
+            {
+                gameSpector.players[0] = this;
+                inGameSpectorNum = 0;
+            }
+            else
+            {
+                if (gameSpector.players[1] == null)
+                {
+                    gameSpector.players[1] = this;
+                    inGameSpectorNum = 1;
+                }
+            }
+        }
 
         slowMove = false;
         stun = false;
         canRotate = true;
     }
-    
 
+   
     void Update()
     {
-
         animator.SetFloat("Speed", velocity.x);
         if (this.isLocalPlayer || this.isServer)
         {
             pingValue = NetworkTime.rtt;
             if (!stun)
             {
-                Drag();
+                
                 characterCotroler.Move(transform.rotation * velocity * Time.deltaTime * 1.5f);
             }
-          
+        }
+        if (this.isLocalPlayer)
+        {
+            Drag();
         }
 
     }
    
+    
+
+    void CreateSmoke()
+    {
+        if (!walkingSmoke.isPlaying)
+        {
+            walkingSmoke.Play();
+        }
+    }
 
     [ClientRpc]
     public void RpcBackPlayerSet(uint id, Vector3 velocityy)
@@ -97,7 +118,6 @@ public class PlayerObiect : NetworkBehaviour
         {
             velocity = velocityy;
         }
-
     }
 
     public void Drag(){
@@ -113,46 +133,61 @@ public class PlayerObiect : NetworkBehaviour
         if (velocity.x > 0.1)
         {
             velocity.x -= 0.23f;
+            
+            walkingSmoke.gameObject.SetActive(true);
         }
         if (velocity.x < -0.1)
         {
             velocity.x += 0.23f;
+            
+                walkingSmoke.gameObject.SetActive(true);
         }
 
         if (velocity.z > 0.1)
         {
             velocity.z -= 0.23f;
+            
+                walkingSmoke.gameObject.SetActive(true);
         }
         if (velocity.z < -0.1)
         {
             velocity.z += 0.23f;
+            
+                walkingSmoke.gameObject.SetActive(true);
         }
 
-        if(velocity.z < 0.1 && velocity.z > -0.1)
+        if(velocity.z < 0.1 && velocity.z > -0.1 && velocity.z != 0)
         {
             velocity.z = 0;
+            
+                walkingSmoke.gameObject.SetActive(false);
         }
-        if (velocity.x < 0.1 && velocity.x > -0.1)
+        if (velocity.x < 0.1 && velocity.x > -0.1 && velocity.x != 0)
         {
             velocity.x = 0;
+            walkingSmoke.gameObject.SetActive(false);
         }
     }
 
 
 
     [ClientRpc]
-    public void RpcDostałem(float dmg, float stun)
+    public void RpcDostałem(float hp, float stun)
     {
-
-        //  Debug.Log("ala Dostalem: " + dmg);
-        Hp -= dmg;
-        hpBarr.fillAmount = Hp / 100;
-        if (stun > 0)
-        {
-            this.StopCoroutine("StunTime");
-            this.StartCoroutine("StunTime", stun);
-        }
-
+        
+            
+            Hp = hp;
+            hpBarr.fillAmount = Hp / 100;
+            if (stun > 0)
+            {
+                this.StopCoroutine("StunTime");
+                this.StartCoroutine("StunTime", stun);
+            }
+            if(Hp <= 0)
+            {
+                gameSpector.DeadBoy(inGameSpectorNum);
+            }
+        
     }
 
     private IEnumerator StunTime(float time)
@@ -167,7 +202,7 @@ public class PlayerObiect : NetworkBehaviour
         canRotate = true;
         GetComponent<MeshRenderer>().material = OrginalMaterial;
     }
-
+/*
     [ClientRpc]
     public void RpcMoveFromWarpon(Quaternion rot, float power)
     {
@@ -177,5 +212,5 @@ public class PlayerObiect : NetworkBehaviour
             characterCotroler.Move(rot * velocity * Time.deltaTime * 1.5f);
         }
     }
-
+*/
 }

@@ -11,7 +11,9 @@ public class AtackSystem2 : NetworkBehaviour
     public PlayerObiect player;
     public Transform WarponSpanPosition;
 
-    
+    public PlayerObiect targetEnemy;
+
+    public Transform rayCaster;
 
     void Start()
     {
@@ -33,12 +35,13 @@ public class AtackSystem2 : NetworkBehaviour
     short MaxAmunition = 3;
     public void AutoAtack(Transform trans)
     {
+        
         if (AtackAmunition > 0)
         {
             player.animator.SetTrigger("Bullet");
             AtackAmunition--;
             //player.slowMove = true;
-            CmdAutoAtack(this.gameObject, WarponSpanPosition.transform.position, player.transform.rotation, player.key);
+            CmdAutoAtack(this.gameObject, player.transform.position, player.transform.rotation, player.key);
             player.stun = true;
             player.canRotate = false;
             StartCoroutine(WaitForKick(0.3f));
@@ -87,8 +90,12 @@ public class AtackSystem2 : NetworkBehaviour
     [Command(ignoreAuthority = true)]
     public void CmdAtackOne(GameObject father, Vector3 position, System.Guid keyy)
     {
-        GameObject mine = Instantiate(minePtef, position, this.transform.rotation, this.transform.root);
-        mine.GetComponent<Mine>().Father = father;
+        GameObject mine = Instantiate(minePtef, this.transform.position, this.transform.rotation, this.transform.root);
+        Mine mineee = mine.GetComponent<Mine>();
+        mineee.Father = father;
+        mineee.endPosition = position;
+        
+
         mine.GetComponent<NetworkMatchChecker>().matchId = keyy;
         NetworkServer.Spawn(mine);
     }
@@ -101,7 +108,7 @@ public class AtackSystem2 : NetworkBehaviour
     {
         CmdAtackTwo();
         player.animator.SetTrigger("Kick");
-        StartCoroutine(WaitForKick(0.7f));
+        StartCoroutine(WaitForKick(0.4f));
     }
 
     [Command(ignoreAuthority = true)]
@@ -110,10 +117,9 @@ public class AtackSystem2 : NetworkBehaviour
         RaycastHit ray;
         if (Physics.Raycast(WarponSpanPosition.position, transform.right, out ray, 2))
         {
-            if (ray.collider.gameObject.tag == "Player")
+            if (ray.collider.gameObject.tag == "EnemyPlayer")
             {
                 ray.collider.GetComponent<Hit>().GetHit( 10, 0, 4, player.transform.rotation);
-
             }
         }
         

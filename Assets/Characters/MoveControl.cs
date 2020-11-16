@@ -30,6 +30,7 @@ public class MoveControl : MonoBehaviour
 
     void FixedUpdate()
     {
+       
         if (touchId != 99)
         {
             if (lenghtTouchBoard != Input.touchCount)
@@ -99,14 +100,14 @@ public class MoveControl : MonoBehaviour
         {
             if (!playerObiect.slowMove)
             {
-                playerObiect.velocity.x = 3.5f;
+                playerObiect.velocity.x = playerObiect.speedValue;
             }
             else
             {
-                playerObiect.velocity.x = 2;
+                playerObiect.velocity.x = playerObiect.speedSlow;
             }
         }
-       // playerObiect.Animacje.SetBool("walking", true);
+      
         
     }
 
@@ -133,7 +134,7 @@ public class MoveControl : MonoBehaviour
         lenghtTouchBoard = 0;
         sircle.transform.localPosition = new Vector3(0, 0, 0);
         touchId = 99;
-        playerObiect.velocity.x = 0.3f;
+        //playerObiect.velocity.x = 0.3f;
     }
 
 

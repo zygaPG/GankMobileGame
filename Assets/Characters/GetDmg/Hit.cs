@@ -20,62 +20,53 @@ public class Hit : NetworkBehaviour
     
     public void GetHit( float dmg, float stun)
     {
-        GameObject damageText = Instantiate(dmgText, canvasPosition.position, new Quaternion(0f,180f,0f,180f) , canvasPosition);
-        damageText.GetComponent<Text>().text = dmg.ToString();
-        NetworkServer.Spawn(damageText);
-        StartCoroutine(TextTime(damageText));
-        //  Debug.Log("ala Dostalem: " + dmg);
-
-        // Hp -= dmg;
-        // hpBarr.fillAmount = Hp / 100;
-
-        
-
-
-        if (stun > 0)
+        TextAnimation(dmg);
+        if (this.isServer)
         {
-            this.StopCoroutine("StunTime");
-            this.StartCoroutine("StunTime", stun);
+            GetDmg(dmg, stun);
+
+            if (stun > 0)
+            {
+                this.StopCoroutine("StunTime");
+                this.StartCoroutine("StunTime", stun);
+            }
         }
     }
 
-    public void GetHit( float dmg, float stun, float moveStrenght, Quaternion rotation)
+    public void GetHit( float dmg, float stun, float moveStrenght, Quaternion rotation)  // <---------------------------------------Move----------
     {
-        GameObject damageText = Instantiate(dmgText, canvasPosition.position, new Quaternion(0f, 180f, 0f, 180f), canvasPosition);
-        damageText.GetComponent<Text>().text = dmg.ToString();
-        NetworkServer.Spawn(damageText);
-        StartCoroutine(TextTime(damageText));
+        TextAnimation(dmg);
+        if (this.isServer)
+        {
+            GetDmg(dmg, stun);
 
-        
             playerObj.stun = true;
             moving.enabled = true;
             moving.SetValues(moveStrenght, rotation);
-        
-        
-        
-
-        if (stun > 0)
-        {
-            this.StopCoroutine("StunTime");
-            this.StartCoroutine("StunTime", stun);
+            if (stun > 0)
+            {
+                this.StopCoroutine("StunTime");
+                this.StartCoroutine("StunTime", stun);
+            }
         }
     }
 
-    public void GetHit(float dmg, float stun, Quaternion rotation , Vector3 enemyPosition)
+    public void GetHit(float dmg, float stun, Quaternion rotation , Vector3 enemyPosition)  // <---------------------------------------Attract----------
     {
-        GameObject damageText = Instantiate(dmgText, canvasPosition.position, new Quaternion(0f, 180f, 0f, 180f), canvasPosition);
-        damageText.GetComponent<Text>().text = dmg.ToString();
-        NetworkServer.Spawn(damageText);
-        StartCoroutine(TextTime(damageText));
-
-        playerObj.stun = true;
-        attract.enabled = true;
-        attract.SetValues(rotation , enemyPosition);
-
-        if (stun > 0)
+        TextAnimation(dmg);
+        if (this.isServer)
         {
-            this.StopCoroutine("StunTime");
-            this.StartCoroutine("StunTime", stun);
+            GetDmg(dmg, stun);
+
+
+            playerObj.stun = true;
+            attract.enabled = true;
+            attract.SetValues(rotation, enemyPosition);
+            if (stun > 0)
+            {
+                this.StopCoroutine("StunTime");
+                this.StartCoroutine("StunTime", stun);
+            }
         }
     }
     [ClientRpc]
@@ -93,6 +84,33 @@ public class Hit : NetworkBehaviour
         }
     }
 
+    
+    private void GetDmg(float dmg , float stun)
+    {
+        playerObj.Hp -= dmg;
+        playerObj.hpBarr.fillAmount = playerObj.Hp / 100;
+        if(playerObj.Hp <= 0)
+        {
+           // playerObj.enabled = false;
+            
+        }
+
+        playerObj.RpcDostałem(playerObj.Hp, stun);
+    }
+
+
+    private void TextAnimation(float dmg)
+    {
+        GameObject damageText = Instantiate(dmgText, canvasPosition.position, new Quaternion(0f, 180f, 0f, 180f), canvasPosition);
+        damageText.GetComponent<Text>().text = dmg.ToString();
+        NetworkServer.Spawn(damageText);
+        StartCoroutine(TextTime(damageText));
+    }
+    private IEnumerator TextTime(GameObject textDmg)
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(textDmg);
+    }
     private IEnumerator StunTime(float time)
     {
         RpcIconStun(true);
@@ -108,15 +126,6 @@ public class Hit : NetworkBehaviour
         // GetComponent<MeshRenderer>().material = OrginalMaterial;
     }
 
-
-
-    IEnumerator TextTime(GameObject textDmg)
-    {
-        yield return new WaitForSeconds(0.5f);
-        Destroy(textDmg);
-    }
-
-    
     public void MoveFromWarpon(Quaternion rot, float power)
     {
         if (this.isServer)

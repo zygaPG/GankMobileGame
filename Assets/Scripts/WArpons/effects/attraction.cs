@@ -24,6 +24,7 @@ public class attraction : NetworkBehaviour
             if (Vector3.Distance(originPosition, this.transform.position) > 1.5)
             {
                 player.characterCotroler.Move(atackMoveRotation * velocity * Time.deltaTime * 1.5f);
+
             }
             else
             {

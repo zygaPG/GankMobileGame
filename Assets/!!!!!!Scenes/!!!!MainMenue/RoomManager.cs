@@ -12,7 +12,7 @@ public class PlayerL
     public NetworkIdentity netIde { get; set; }
 
 }
-
+/*
 public class Room
 {
     public int roomId { get; set; }
@@ -22,19 +22,9 @@ public class Room
     public bool acpt1 = false;
     public bool acpt2 = false;
 
-   // public GameObject player1;
-   // public GameObject player2;
-
     public bool isStarted = false;
 }
-
-
-//----------odswież-liste-->wyświetl-
-//----------stwórz-nowy-room-
-//----------dołącz-do-room-
-//----------gotowość-w-roomie-
-//----------rozpocznij-gre---
-//----------załaduj-scene-
+*/
 
 public class RoomManager : NetworkBehaviour
 {
@@ -49,11 +39,11 @@ public class RoomManager : NetworkBehaviour
     public PlayerMM player;
 
     public List<PlayerL> players;
-    public List<Room> rooms = new List<Room>();
+    //public List<Room> rooms = new List<Room>();
 
-    private List<RoomPanel> localrooms;
+    //private List<RoomPanel> localrooms;
 
-    RectTransform lastPanel;
+    //RectTransform lastPanel;
 
     //private Scene sceneArena;
 
@@ -72,7 +62,7 @@ public class RoomManager : NetworkBehaviour
     {
         players = new List<PlayerL>();
         //rooms.Add(new Room() { roomId = 1 , isStarted = true});
-        localrooms = new List<RoomPanel>();
+       // localrooms = new List<RoomPanel>();
 
         rooomCurrentId = 0;
     }
@@ -106,10 +96,11 @@ public class RoomManager : NetworkBehaviour
         //Debug.Log("dodaje gracza do listy " );
         //this.name = namee;
         players.Add(new PlayerL() { playerName = namee, netIde = conn });
-        ShowAllList(conn);
+       // ShowAllList(conn);
     }
 
     //---server---
+    /*
     public void ShowAllList(NetworkIdentity netIdd)
     {
         foreach (Room rome in rooms)
@@ -470,11 +461,11 @@ public class RoomManager : NetworkBehaviour
 
 
 
-
+    */
 
 
     // <--------------------------------------------------------------VERSION2-------------------------------------->>
-
+    [Header("menue")]
     public string myInviteKey;
     public Text myKeyPlace;
     public InputField inputFieldKey;
@@ -648,13 +639,14 @@ public class RoomManager : NetworkBehaviour
             RoomKey findrom = roomKeys.Find(xx => xx.Key == machKey);
 
             findrom.slot2 = enemyId;
-            //roomKeys.Remove( roomKeys.Find(xx => xx.slot1 == enemyId));
+            
             
             findrom.isStarted = true;
             roomsStartedGame.Add(findrom);
             TargetStartMenue(findrom.slot1.connectionToClient, "enemyMacik", machKey);
             TargetStartMenue(findrom.slot2.connectionToClient, "owner", machKey);
             roomKeys.Remove(findrom);
+            roomKeys.Remove(roomKeys.Find(xx => xx.slot1 == enemyId));
         }
         else
         {
@@ -806,7 +798,7 @@ public class RoomManager : NetworkBehaviour
     //[Command(ignoreAuthority = true)]
     public IEnumerator WaitForStartMach(NetworkIdentity netIdt)
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(5);
         StartMatch(netIdt);
     }
 

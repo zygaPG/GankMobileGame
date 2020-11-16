@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tester
+  - EnemyPlayer
   layers:
   - Default
   - TransparentFX

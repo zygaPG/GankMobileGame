@@ -36,7 +36,7 @@ public class AutoatackControl : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && this.enabled)
+        if (other.gameObject.tag == "EnemyPlayer" && this.enabled && other.gameObject != this.gameObject)
         {
             other.GetComponent<Hit>().GetHit(autoAtackDmg, 0, 3, player.transform.rotation);
         }

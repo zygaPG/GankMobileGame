@@ -13,6 +13,8 @@ public class Boolet : NetworkBehaviour
 
     Vector3 startPosition;
 
+    public float damage = 10;
+
     void Start()
     {
             rb = GetComponent<Rigidbody>();
@@ -35,9 +37,9 @@ public class Boolet : NetworkBehaviour
     {
         if (this.isServer)
         {
-            if (other.gameObject.tag == "Player" && other.gameObject != Father)
+            if (other.gameObject.tag == "EnemyPlayer" && other.gameObject != Father)
             {
-                other.gameObject.GetComponent<Hit>().GetHit(10, 0);
+                other.gameObject.GetComponent<Hit>().GetHit(damage, 0);
                 Destroy(this.gameObject);
             }
         }

@@ -18,6 +18,8 @@ public class AtackSystem1 : NetworkBehaviour
     [SerializeField]
     private AutoatackControl autoatackControl;
 
+    public PlayerObiect targetEnemy;
+    public Transform rayCaster;
 
     private void Start()
     {

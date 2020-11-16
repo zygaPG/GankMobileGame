@@ -11,6 +11,31 @@ public class Mine : NetworkBehaviour
 
     public float Damage = 20;
 
+    public Vector3 endPosition;
+    public Vector3 startParabola;
+
+    public float mineJumpTime = 0.05f;
+    private float animationTime;
+
+    private void Start()
+    {
+        startParabola = this.transform.position;
+    }
+
+    private void Update()
+    {
+        animationTime += Time.deltaTime;
+        animationTime = animationTime % mineJumpTime;
+
+        transform.position = MathParabola.Parabola(startParabola, endPosition, 3f, animationTime);
+
+        if(Vector3.Distance(transform.position, endPosition) <= 0.3f)
+        {
+            this.enabled = false;
+        }
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (this.isServer)
@@ -24,5 +49,6 @@ public class Mine : NetworkBehaviour
                 Destroy(this.gameObject);
             }
         }
+        Debug.Log(other.gameObject.name);
     }
 }
