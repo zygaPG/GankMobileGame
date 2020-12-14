@@ -10,9 +10,8 @@ public class moveMove : NetworkBehaviour
    // [SyncVar]
     public Vector3 velocity = new Vector3();
    // [SyncVar]
-    public float distance;
-   // [SyncVar]
-    public Vector3 originPosition;
+     public float tarcie = 9;
+
 
     private void Start()
     {
@@ -23,29 +22,41 @@ public class moveMove : NetworkBehaviour
     {
         if (this.isServer)
         {
-            if (Vector3.Distance(originPosition, this.transform.position) < distance)
+            if(velocity.x > 0.4)
             {
-
+                float xx = velocity.x - tarcie * Time.deltaTime;
+                velocity = new Vector3(xx, 0, 0);
                 player.characterCotroler.Move(atackMoveRotation * velocity * Time.deltaTime * 1.5f);
+                
             }
             else
             {
-                
-               player.stun = false;
-               this.enabled = false;
+
+                player.stun = false;
+                this.enabled = false;
             }
         }
     }
-    
-    
-    
-   
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if(collision.gameObject.tag == "Wall")
+        {
+            player.stun = false;
+            this.enabled = false;
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        
+    }
 
     public void SetValues(float strenghht, Quaternion rotatione)
     {
         velocity = new Vector3(8, 0, 0);
-        distance = strenghht;
         atackMoveRotation = rotatione;
-        originPosition = this.transform.position;
     }
 }

@@ -70,7 +70,6 @@
     <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\RoomPanel.cs" />
     <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\StartMenue.cs" />
     <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\invite\invitePoke.cs" />
-    <Compile Include="Assets\!!!!!!Scenes\!!!!MainMenue\playerFunctions.cs" />
     <Compile Include="Assets\!!!!Effects\Blit\Blit.cs" />
     <Compile Include="Assets\!!!!Effects\Blit\BlitPass.cs" />
     <Compile Include="Assets\Characters\Character_one_1\AtackSystem2.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="Assets\Characters\Character_one_1\Kick.cs" />
     <Compile Include="Assets\Characters\Character_one_1\Mine.cs" />
     <Compile Include="Assets\Characters\Character_one_1\MineButton.cs" />
+    <Compile Include="Assets\Characters\Character_one_1\warpon_prevs\explosionScript.cs" />
     <Compile Include="Assets\Characters\Character_two_2\AtackSystem1.cs" />
     <Compile Include="Assets\Characters\Character_two_2\AutoAtackClose.cs" />
     <Compile Include="Assets\Characters\Character_two_2\AutoatackControl.cs" />

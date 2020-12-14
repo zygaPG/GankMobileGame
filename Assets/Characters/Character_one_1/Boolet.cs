@@ -42,6 +42,10 @@ public class Boolet : NetworkBehaviour
                 other.gameObject.GetComponent<Hit>().GetHit(damage, 0);
                 Destroy(this.gameObject);
             }
+            if (other.gameObject.tag == "Wall")
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

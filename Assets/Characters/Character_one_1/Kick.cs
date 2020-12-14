@@ -145,5 +145,47 @@ public class Kick : MonoBehaviour
             rangeBar.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        collision.gameObject.GetComponent<Light>().intensity = 100;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
     

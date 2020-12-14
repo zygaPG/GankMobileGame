@@ -8,7 +8,7 @@ public class Chuck : NetworkBehaviour
     //----TO-Do--------------niech-hak-wraca-w-kierunku-father----------
 
     
-    public float chuckSpeed = 5;
+    public float chuckSpeed = 8;
     public Rigidbody rb;
 
     public GameObject Father;
@@ -71,6 +71,12 @@ public class Chuck : NetworkBehaviour
                 gothem = true;
                 other.GetComponent<Hit>().GetHit(10, 0, this.transform.rotation, Father.transform.position);
                 this.GetComponent<Collider>().enabled = false;
+            }
+
+            if(other.gameObject.tag == "Wall")
+            {
+                back = true;
+                Destroy(this.gameObject);
             }
         }
     }

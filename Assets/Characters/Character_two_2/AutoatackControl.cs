@@ -13,16 +13,21 @@ public class AutoatackControl : NetworkBehaviour
     // [SyncVar]
     public Vector3 velocity = new Vector3();
     // [SyncVar]
-    public float distance;
-    // [SyncVar]
-    public Vector3 originPosition;
+
+    [SerializeField]
+    private BoxCollider colider;
+
+    float tarcie = 9;
 
     private void Update()
     {
         
-            if (Vector3.Distance(originPosition, this.transform.position) < distance)
+            
+            
+            if (velocity.x > 0.4)
             {
-
+                float xx = velocity.x - tarcie * Time.deltaTime;
+                velocity = new Vector3(xx, 0, 0);
                 player.characterCotroler.Move(atackMoveRotation * velocity * Time.deltaTime * 1.5f);
             }
             else
@@ -44,10 +49,8 @@ public class AutoatackControl : NetworkBehaviour
 
     private void OnEnable()
     {
+            colider.enabled = true;
             velocity = new Vector3(8, 0, 0);
-            distance = 3;
             atackMoveRotation = player.transform.rotation;
-            originPosition = player.transform.position;
-           
     }
 }

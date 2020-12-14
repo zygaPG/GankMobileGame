@@ -23,6 +23,8 @@ public class attraction : NetworkBehaviour
         {
             if (Vector3.Distance(originPosition, this.transform.position) > 1.5)
             {
+                float xx = velocity.x - 7 * Time.deltaTime;
+                velocity = new Vector3(xx, 0, 0);
                 player.characterCotroler.Move(atackMoveRotation * velocity * Time.deltaTime * 1.5f);
 
             }
@@ -37,7 +39,7 @@ public class attraction : NetworkBehaviour
 
     public void SetValues( Quaternion rotatione, Vector3 pos)
     {
-        velocity = new Vector3(-5.5f, 0, 0);
+        velocity = new Vector3(-1f, 0, 0);
         atackMoveRotation = rotatione;
         originPosition = pos;
     }

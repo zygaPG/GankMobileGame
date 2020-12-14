@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tester
   - EnemyPlayer
+  - Wall
   layers:
   - Default
   - TransparentFX

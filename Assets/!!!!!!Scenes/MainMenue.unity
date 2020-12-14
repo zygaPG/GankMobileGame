@@ -352,7 +352,6 @@ MonoBehaviour:
   playermm: {fileID: 0}
   player2: {fileID: 0}
   roomOwner: 0
-  arenaSpawner: {fileID: 0}
 --- !u!4 &280251004
 Transform:
   m_ObjectHideFlags: 0
@@ -1318,7 +1317,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7ec155d7177a9f94fb42f19f553b2dda, type: 3}
-  m_Color: {r: 0.9672036, g: 0.990566, b: 0.9722098, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

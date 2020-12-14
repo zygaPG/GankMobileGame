@@ -21,6 +21,9 @@ public class AtackSystem1 : NetworkBehaviour
     public PlayerObiect targetEnemy;
     public Transform rayCaster;
 
+    [SerializeField]
+    private GameObject slash;
+
     private void Start()
     {
         autoAtackRange = 2;
@@ -90,6 +93,7 @@ public class AtackSystem1 : NetworkBehaviour
     public void AutoAtack()
     {
         player.animator.SetTrigger("AutoAtack");
+        slash.SetActive(true);
         player.canRotate = false;
         player.stun = true;
         CmdAutoAtack();
@@ -110,6 +114,7 @@ public class AtackSystem1 : NetworkBehaviour
         yield return new WaitForSeconds(time);
         player.canRotate = true;
         player.stun = false;
+        slash.SetActive(false);
     }
 
 

@@ -41,7 +41,7 @@ public class AtackSystem2 : NetworkBehaviour
             player.animator.SetTrigger("Bullet");
             AtackAmunition--;
             //player.slowMove = true;
-            CmdAutoAtack(this.gameObject, player.transform.position, player.transform.rotation, player.key);
+            CmdAutoAtack(this.gameObject, WarponSpanPosition.position, player.transform.rotation, player.key);
             player.stun = true;
             player.canRotate = false;
             StartCoroutine(WaitForKick(0.3f));
@@ -80,7 +80,7 @@ public class AtackSystem2 : NetworkBehaviour
         if (mineAmunition > 0)
         {
             player.animator.SetTrigger("Trow");
-            Vector3 position = new Vector3(positionRing.x, 0.016f, positionRing.z);
+            Vector3 position = new Vector3(positionRing.x, 0.3f, positionRing.z);
             CmdAtackOne(player.gameObject, position, player.key);
             player.slowMove = true;
             StartCoroutine(WaitSloww(0.3f));
@@ -92,11 +92,10 @@ public class AtackSystem2 : NetworkBehaviour
     {
         GameObject mine = Instantiate(minePtef, this.transform.position, this.transform.rotation, this.transform.root);
         Mine mineee = mine.GetComponent<Mine>();
-        mineee.Father = father;
+
+        mineee.SetValues(keyy, father);
         mineee.endPosition = position;
         
-
-        mine.GetComponent<NetworkMatchChecker>().matchId = keyy;
         NetworkServer.Spawn(mine);
     }
 

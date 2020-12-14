@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerObiect : NetworkBehaviour
 {
+    public RoomManager romManager;
     public double pingValue;
 
     public string namePlayer = "anon";
@@ -36,16 +37,20 @@ public class PlayerObiect : NetworkBehaviour
     public Text nickName;
 
 
-    public System.Guid key;
-
     public GameSpector gameSpector;
 
     public Animator animator;
     //public Animator animator2;
     private short inGameSpectorNum;
 
-    
+    bool wasLocalPlayer;
+
     public ParticleSystem walkingSmoke;
+
+    [Header("Only server variable")]
+    public System.Guid key;  // using to spawning items
+
+    public bool userDisconect = false; // only server value
 
     void Start()
     {
@@ -53,10 +58,18 @@ public class PlayerObiect : NetworkBehaviour
         
         if (this.isLocalPlayer)
         {
+            wasLocalPlayer = true;
             cameraaa = GameObject.Find("Main Camera");
+            romManager = GameObject.Find("RoomManager").GetComponent<RoomManager>();
             cameraaa.GetComponent<CameraSmoothMove>().target = this.gameObject.transform;
             cameraaa.GetComponent<CameraSmoothMove>().enabled = true;
+
             
+            romManager.playerNetCon = this.netIdentity;
+            romManager.StartMatch();
+            gameSpector = romManager.gameSpector;
+
+            romManager.state = "inMatch";
         }
 
         if (gameSpector)
@@ -79,12 +92,38 @@ public class PlayerObiect : NetworkBehaviour
         slowMove = false;
         stun = false;
         canRotate = true;
+
+        
     }
 
-   
+    
+
+    private void OnDestroy()
+    {
+
+        if (wasLocalPlayer)
+        {
+            cameraaa.GetComponent<CameraSmoothMove>().target = null;
+            cameraaa.GetComponent<CameraSmoothMove>().enabled = false;
+        }
+
+        
+        if (!userDisconect) // only server value // set true if replece and false if player disconect form server
+        {
+            Debug.Log("disconect error");
+            romManager.CmdDisconectFromMatch(netIdentity, "unvariable");
+        }
+    }
+
+
+
+
     void Update()
     {
-        animator.SetFloat("Speed", velocity.x);
+        if (animator) //-----------------------Delate-this;
+        {
+            animator.SetFloat("Speed", velocity.x);
+        }
         if (this.isLocalPlayer || this.isServer)
         {
             pingValue = NetworkTime.rtt;
@@ -101,15 +140,6 @@ public class PlayerObiect : NetworkBehaviour
 
     }
    
-    
-
-    void CreateSmoke()
-    {
-        if (!walkingSmoke.isPlaying)
-        {
-            walkingSmoke.Play();
-        }
-    }
 
     [ClientRpc]
     public void RpcBackPlayerSet(uint id, Vector3 velocityy)
@@ -202,15 +232,38 @@ public class PlayerObiect : NetworkBehaviour
         canRotate = true;
         GetComponent<MeshRenderer>().material = OrginalMaterial;
     }
-/*
-    [ClientRpc]
-    public void RpcMoveFromWarpon(Quaternion rot, float power)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (this.isLocalPlayer)
-        {
-            Vector3 velocity = new Vector3(power, 0, 0);
-            characterCotroler.Move(rot * velocity * Time.deltaTime * 1.5f);
-        }
+       // Debug.Log(collision.gameObject.name);
     }
-*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+       // Debug.Log(other.gameObject.name);
+    }
+
+
+   
+    
+
+
+   
+
+
+
+
+
+
+    /*
+        [ClientRpc]
+        public void RpcMoveFromWarpon(Quaternion rot, float power)
+        {
+            if (this.isLocalPlayer)
+            {
+                Vector3 velocity = new Vector3(power, 0, 0);
+                characterCotroler.Move(rot * velocity * Time.deltaTime * 1.5f);
+            }
+        }
+    */
 }

@@ -11,9 +11,9 @@ public class CharacterRotation : MonoBehaviour
     [SerializeField]
     private GameObject camera;
     [SerializeField]
-    private ArenaSpawner arenaSpawner;
+    //private ArenaSpawner arenaSpawner;
 
-    [SerializeField]
+    //[SerializeField]
     private GameObject selectCanvas;
     private int characterNum = 1;
 
@@ -47,7 +47,7 @@ public class CharacterRotation : MonoBehaviour
 
     public void GetChemp()
     {
-        arenaSpawner.SelectChemp(characterNum);
+        //arenaSpawner.SelectChemp(characterNum);
         this.gameObject.SetActive(false);
         selectCanvas.SetActive(false);
     }
